@@ -1,0 +1,15 @@
+*
+!.zshrc
+!.gitignore
+
+
+!.config/
+.config/*
+!.config/kitty
+.config/kitty/*
+!.config/kitty/kitty.conf
+
+
+!.config/lvim
+.config/lvim/*
+!.config/lvim/config.lua
