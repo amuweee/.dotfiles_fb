@@ -15,7 +15,7 @@ lvim.colorscheme = "gruvbox-material"
 
 -- status line
 lvim.builtin.lualine.options = {theme = 'gruvbox-material'}
-lvim.builtin.lualine.stype = "default"
+lvim.builtin.lualine.stype = "lvim"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_c = { "diff" }
 lvim.builtin.lualine.sections.lualine_y = { "filename" }

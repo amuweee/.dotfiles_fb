@@ -1,6 +1,7 @@
 *
 !.zshrc
 !.gitignore
+!.yabairc
 
 
 !.config/
@@ -13,3 +14,8 @@
 !.config/lvim
 .config/lvim/*
 !.config/lvim/config.lua
+
+
+!.config/karabiner
+.config/karabiner/*
+!.config/karabier/karabiner.json
