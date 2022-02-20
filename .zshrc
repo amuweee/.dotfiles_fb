@@ -133,10 +133,23 @@ RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
 
 
-alias v="lvim"
-alias pw='echo "bMn2H0H$lCUFVZqP"'
+alias l="lvim"
+alias v="nvim"
+alias cr="gcloud compute start-iap-tunnel mysql-comb-replica-master 3306 --local-host-port=localhost:3307 --project freshbooks-prod --zone us-east1-b"
+alias pw='pbcopy < ~/.pw'
+
+alias p="cd ~/data-pipelines && lvim"
+alias i="cd ~/data-ingestion-platform && lvim"
+
 
 export PATH=/usr/local/bin:$PATH
 export PATH=~/.local/bin:$PATH
 export EDITOR='lvim'
 export PATH="$PATH:$HOME/.spicetify"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/mengyu.bai/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mengyu.bai/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/mengyu.bai/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mengyu.bai/google-cloud-sdk/completion.zsh.inc'; fi
+eval "$(pyenv init -)"
