@@ -1,21 +1,35 @@
-*
-!.zshrc
-!.gitignore
-!.yabairc
+# ignore everything
+/**
+
+# Git aliases, identification info
+!/.gitconfig
+!/.gitignore
+!/.gitexcludes
+
+# system configs on /home
+!/.zshrc
+!/.zsh
+!/.Xmodmap
+!/.xinitrc
+!/.yabairc
+
+!/.config/kitty
+!/.config/kitty/*
+!/.config/kitty/kitty.conf
+
+!/.config/karabiner
+!/.config/karabiner/*
+!/.config/karabier/karabiner.json
+
+!/.config/nvim
+!/.config/nvim/*
+!/.config/nvim/lua
+!/.config/nvim/lua/user
+!/.config/nvim/lua/user/*
+!/.config/nvim/lua/user/lsp
+!/.config/nvim/lua/user/lsp/*
+!/.config/nvim/lua/user/lsp/settings
+!/.config/nvim/lua/user/lsp/settings/*
 
 
-!.config/
-.config/*
-!.config/kitty
-.config/kitty/*
-!.config/kitty/kitty.conf
 
-
-!.config/lvim
-.config/lvim/*
-!.config/lvim/config.lua
-
-
-!.config/karabiner
-.config/karabiner/*
-!.config/karabier/karabiner.json

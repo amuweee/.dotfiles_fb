@@ -1,3 +1,5 @@
+source ~/.config/zsh-snap/zsh-snap/znap.zsh
+znap source marlonrichert/zsh-autocomplete
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -77,6 +79,7 @@ plugins=(
 	extract
 	copydir
 	vi-mode
+  zsh-autocomplete
 )
 
 # vi-mode
@@ -134,12 +137,19 @@ RPS2=$RPS1
 
 
 alias l="lvim"
-alias v="nvim"
+alias n="nvim"
 alias cr="gcloud compute start-iap-tunnel mysql-comb-replica-master 3306 --local-host-port=localhost:3307 --project freshbooks-prod --zone us-east1-b"
 alias pw='pbcopy < ~/.pw'
+alias c='clear'
 
-alias p="cd ~/data-pipelines && lvim"
-alias i="cd ~/data-ingestion-platform && lvim"
+alias p="cd ~/data-pipelines"
+alias i="cd ~/data-ingestion-platform"
+alias t="cd ~/gcp-freshbooks-data"
+
+alias dgdev="gcloud compute ssh --zone 'us-east1-b' 'collibra-lineage-harvester'  --tunnel-through-iap --project 'freshbooks-data-gov-dev'"
+alias dgprod="gcloud compute ssh --zone 'us-east1-b' 'collibra-lineage-harvester'  --tunnel-through-iap --project 'freshbooks-data-gov-prod'"
+
+alias local_airflow="docker exec -it data-pipelines-webserver-1 bash"
 
 
 export PATH=/usr/local/bin:$PATH
@@ -153,3 +163,9 @@ if [ -f '/Users/mengyu.bai/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/meng
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mengyu.bai/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mengyu.bai/google-cloud-sdk/completion.zsh.inc'; fi
 eval "$(pyenv init -)"
+
+# starship
+eval "$(starship init zsh)"
+
+export PATH="$(brew --prefix)/opt/sqlite/bin:${PATH}"
+

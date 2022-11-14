@@ -73,6 +73,7 @@ lvim.builtin.which_key.mappings["bb"] = { "<Cmd>split<CR>", "Split Horizontal" }
 lvim.keys.insert_mode["jj"] = false
 lvim.keys.insert_mode["jk"] = false
 lvim.keys.insert_mode["kj"] = false
+-- lvim.builtin.which_key.mappings("<Leader>nf", ":lua require('neogen').generate()<CR>")
 
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 -- lvim.builtin.which_key.mappings["t"] = {
@@ -87,11 +88,13 @@ lvim.keys.insert_mode["kj"] = false
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
-lvim.builtin.dashboard.active = true
+-- lvim.builtin.alpha.active = true
 lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
+lvim.builtin.nvimtree.setup.view.auto_resize = true
+lvim.builtin.nvimtree.setup.view.width = 45
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
@@ -106,6 +109,11 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+}
+
+local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+parser_configs.hcl = {
+  filetype = "hcl", "terraform",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
@@ -135,6 +143,8 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- end
 
 -- set a formatter, this will override the language server formatting capabilities (if it exists)
+lvim.format_on_save = true
+
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "black", filetypes = { "python" } },
@@ -176,7 +186,8 @@ lvim.plugins = {
       cmd = "TroubleToggle",
     },
     {"sainnhe/gruvbox-material"},
-    {"ellisonleao/glow.nvim"}
+    {"ellisonleao/glow.nvim"},
+    {"ggandor/lightspeed.nvim"},
 }
 
 
