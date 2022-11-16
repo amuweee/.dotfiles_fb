@@ -77,9 +77,9 @@ plugins=(
 	colored-man-pages
 	z
 	extract
-	copydir
+  copypath
 	vi-mode
-  zsh-autocomplete
+  zsh-autosuggestions
 )
 
 # vi-mode
