@@ -141,6 +141,7 @@ alias n="nvim"
 alias cr="gcloud compute start-iap-tunnel mysql-comb-replica-master 3306 --local-host-port=localhost:3307 --project freshbooks-prod --zone us-east1-b"
 alias pw='pbcopy < ~/.pw'
 alias c='clear'
+alias e='exit'
 
 alias p="cd ~/data-pipelines"
 alias i="cd ~/data-ingestion-platform"
